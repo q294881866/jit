@@ -5,9 +5,10 @@ package io.seata.jit;
  */
 public abstract class Starter {
 
-    abstract void start0();
+    protected abstract void start0() throws Exception;
 
-    public void start(){
+
+    public void start() throws Exception {
         start0();
         new ApplicationKeeper().keep();
     }
