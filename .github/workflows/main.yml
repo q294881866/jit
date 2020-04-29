@@ -29,5 +29,5 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Test
-      run: java -cp .:server/target/lib/*:server/target/seata-jit-server.jar io.seata.jit.server.Main
+      run: java -cp .;server/target/lib/*;server/target/seata-jit-server.jar io.seata.jit.server.Main
 
