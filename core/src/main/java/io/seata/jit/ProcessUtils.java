@@ -1,4 +1,4 @@
-package org.jit.util;
+package io.seata.jit;
 
 import java.io.IOException;
 import java.io.OutputStream;
