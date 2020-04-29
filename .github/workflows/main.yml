@@ -23,9 +23,9 @@ jobs:
     - name: git pull seata
       run: |
         cd /tmp
-        git clone https://github.com/seata/seata.git seata
+        git clone -b develop https://github.com/seata/seata.git seata
         cd seata
-        mvn -B package install --file pom.xml
+        mvn clean package -DskipTests=true -Dcheckstyle.skip=true -U
     - name: Build with Maven
       run: mvn -B package --file pom.xml
         
