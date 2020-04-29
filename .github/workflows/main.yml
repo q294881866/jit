@@ -20,12 +20,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: git pull seata
-      run: |
-        cd /tmp
-        git clone -b develop https://github.com/seata/seata.git seata
-        cd seata
-        mvn clean package -DskipTests=true -Dcheckstyle.skip=true -U
+#    - name: git pull seata
+#      run: |
+#        cd /tmp
+#        git clone -b develop https://github.com/seata/seata.git seata
+#        cd seata
+#        mvn clean package -DskipTests=true -Dcheckstyle.skip=true -U
     - name: Build with Maven
       run: mvn -B package --file pom.xml
         
