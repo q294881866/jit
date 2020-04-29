@@ -3,8 +3,6 @@ package io.seata.jit.server;
 import io.seata.jit.Starter;
 import io.seata.server.Server;
 
-import java.io.IOException;
-
 /**
  * @author ppf
  */
@@ -15,9 +13,8 @@ public class SeataServerStarter extends Starter {
      */
     Server server = null;
     @Override
-    protected void start0() throws Exception {
+    protected void start0(String[] args) throws Exception {
         server = new Server();
-        String[] args = new String[3];
         server.main(args);
     }
 }
