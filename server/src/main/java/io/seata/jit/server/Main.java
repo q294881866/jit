@@ -83,8 +83,8 @@ public class Main {
 
     public static TestCase getTccTestCase() {
         TestCase tcc = new TestCase("Tcc", "spring dubbo");
-        tcc.addService("java -cp .;tcc/target/lib/*;tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter", 60);
-        tcc.addService("java -cp .;tcc/target/lib/*;tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter", 60);
+        tcc.addService("java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter", 60);
+        tcc.addService("java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter", 60);
 
         return tcc;
     }
