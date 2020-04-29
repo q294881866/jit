@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package org.jit.util;
+package io.seata.jit;
 
 
 import java.util.concurrent.locks.Condition;

@@ -1,4 +1,4 @@
-package org.jit.util;
+package io.seata.jit;
 
 /**
  * @author ppf
