@@ -24,7 +24,7 @@ public class Main {
 
     private static final ThreadFactory      JIT_TF   = new ThreadFactoryBuilder().setDaemon(true).setNameFormat("seata-jit-%d")
             .setUncaughtExceptionHandler((t, a) -> a.printStackTrace()).build();
-    private static final ThreadPoolExecutor JIT_POOL = new ThreadPoolExecutor(3, 8,
+    private static final ThreadPoolExecutor JIT_POOL = new ThreadPoolExecutor(8, 32,
             120L, TimeUnit.SECONDS, new LinkedBlockingQueue<>(), JIT_TF, new NewThreadRunsPolicy());
 
     static {
