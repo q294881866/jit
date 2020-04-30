@@ -31,7 +31,7 @@ public class TestCase {
     /**
      * 执行时间
      */
-    private long execTime = 10;
+    private long execTime = 120;
 
 
 
