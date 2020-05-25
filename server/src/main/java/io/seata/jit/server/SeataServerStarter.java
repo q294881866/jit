@@ -1,5 +1,6 @@
 package io.seata.jit.server;
 
+import io.seata.jit.ApplicationKeeper;
 import io.seata.jit.Starter;
 import io.seata.server.Server;
 
@@ -16,5 +17,6 @@ public class SeataServerStarter extends Starter {
     protected void start0(String[] args) throws Exception {
         server = new Server();
         server.main(args);
+        new ApplicationKeeper().keep();
     }
 }

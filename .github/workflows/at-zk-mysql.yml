@@ -1,4 +1,4 @@
-name: services
+name: at zk mysql
 
 on:
   push:

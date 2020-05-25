@@ -1,5 +1,6 @@
 package io.seata.jit.server;
 
+import io.seata.jit.ApplicationKeeper;
 import io.seata.jit.Starter;
 import org.apache.curator.test.TestingServer;
 
@@ -12,5 +13,6 @@ public class ZookeeperStarter extends Starter {
     protected void start0(String[] args) throws Exception {
         server = new TestingServer(2181, true);
         server.start();
+        new ApplicationKeeper().keep();
     }
 }
