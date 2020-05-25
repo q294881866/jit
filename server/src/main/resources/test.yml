@@ -1,0 +1,18 @@
+tcc-dubbo:
+  title : tcc-dubbo
+  content : 转账付款场景
+  execTime : 120
+  commands :
+    - {command: java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter,interval: 2*60}
+    - {command: java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter,interval: 1*60}
+    - {command: curl http 测试命令1,interval: 30}
+    - {command: curl http 测试命令2,interval: 30}
+tcc-sofa:
+  title : tcc-sofa
+  content : 转账付款场景
+  execTime: 120
+  commands :
+    - {command: provider start 命令,interval: 2*60}
+    - {command: comsumer start 命令,interval: 1*60}
+    - {command: curl http 测试命令1,interval: 30}
+    - {command: curl http 测试命令2,interval: 30}
