@@ -27,9 +27,9 @@ jobs:
 #        mvn clean package -DskipTests=true -Dcheckstyle.skip=true -U
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: depends
-      run: java -cp .:server/target/lib/*:server/target/seata-jit-server.jar io.seata.jit.server.Main
-    - name: start provider
-      run: java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter
-    - name: start consumer
-      run: java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter
+    - name: test
+      run: |
+       java -cp .:server/target/lib/*:server/target/seata-jit-server.jar io.seata.jit.server.Main
+       java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter
+       java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter
+
