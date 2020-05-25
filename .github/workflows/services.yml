@@ -10,20 +10,19 @@ jobs:
   services:
     runs-on: ubuntu-latest
     timeout-minutes: 600
+    services:
+      zookeeper:
+        image: zookeeper
+        ports:
+          - 2181:2181 
+      mysql:
+        image: mysql
+        env:
+          MYSQL_ROOT_PASSWORD: 123456
+          MYSQL_DATABASE: seata
+          MYSQL_ROOT_HOST: 3306
+        ports:
+          - 3306:3306
     steps:
     - name: Setup MySQL
-      uses: mirromutth/mysql-action@v1.1
-      with:
-        host port: 3306
-        container port: 3306
-        character set server: utf8mb4
-        collation server: utf8mb4_general_ci
-        mysql version: '8.0'
-        mysql root password: seata-test
-        mysql database: seata
-        mysql user: seata
-        mysql password: 123123
-    - name: Setup Zookeeper
-      run : |
-       docker pull zookeeper:latest
-       docker run --name zookeeper -d zookeeper:latest
+      run: echo 'mysql zk'
