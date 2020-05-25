@@ -17,6 +17,7 @@
 package io.seata.jit;
 
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -54,10 +55,16 @@ public class ApplicationKeeper {
      * Keep.
      */
     public void keep() {
+        keep(TimeUnit.SECONDS.toMillis(120));
+    }
+    /**
+     * Keep.
+     */
+    public void keep(long timeout) {
         System.out.println("OK");
         synchronized (LOCK) {
             try {
-                LOCK.wait();
+                LOCK.wait(timeout);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
