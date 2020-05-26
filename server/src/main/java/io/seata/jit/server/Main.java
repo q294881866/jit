@@ -3,6 +3,7 @@ package io.seata.jit.server;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.seata.jit.ApplicationKeeper;
 import io.seata.jit.Starter;
+import io.seata.server.Server;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,9 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        startDepends(args);
+//        startDepends(args);
+        Server server = new Server();
+        server.main(args);
         new ApplicationKeeper().keep();
     }
 

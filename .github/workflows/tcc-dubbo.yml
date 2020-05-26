@@ -13,6 +13,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    services:
+      zookeeper:
+        image: zookeeper
+        ports:
+          - 2181:2181
+      mysql:
+        image: mysql
+        env:
+          MYSQL_ROOT_PASSWORD: 123456
+          MYSQL_DATABASE: seata
+          MYSQL_ROOT_HOST: 3306
+        ports:
+          - 3306:3306
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
