@@ -30,6 +30,8 @@ jobs:
     - name: test
       run: |
        java -cp .:server/target/lib/*:server/target/seata-jit-server.jar io.seata.jit.server.Main
+       sleep 1m
        java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter
+       sleep 1m
        java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter
 
