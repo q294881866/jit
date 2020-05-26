@@ -30,7 +30,7 @@ public class Main {
 //        startDepends(args);
         Server server = new Server();
         server.main(args);
-        new ApplicationKeeper().keep();
+//        new ApplicationKeeper().keep();
     }
 
     public static void startDepends(String[] args) throws Exception {
