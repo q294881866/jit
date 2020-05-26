@@ -35,7 +35,6 @@ public class Main {
         for (Starter dependServer : dependServers) {
             JIT_POOL.execute(() -> dependServer.start(args));
         }
-        sleep(30);
     }
 
 
