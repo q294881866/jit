@@ -55,13 +55,12 @@ public class ApplicationKeeper {
      * Keep.
      */
     public void keep() {
-        keep(TimeUnit.SECONDS.toMillis(120));
+        keep(TimeUnit.MINUTES.toMillis(30));
     }
     /**
      * Keep.
      */
     public void keep(long timeout) {
-        System.out.println("OK");
         synchronized (LOCK) {
             try {
                 LOCK.wait(timeout);

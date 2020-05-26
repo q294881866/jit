@@ -17,6 +17,7 @@ public class SeataServerStarter extends Starter {
     protected void start0(String[] args) throws Exception {
         server = new Server();
         server.main(args);
+        System.out.println("started seata");
         new ApplicationKeeper().keep();
     }
 }
