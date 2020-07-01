@@ -47,7 +47,7 @@ jobs:
        nohup java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter &
        sleep 1m
        java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter
-       ls ~/
+       ls ~/logs
     - name: Contains error.log
       run: bash -x ./check_error.sh
     - name: The job has failed

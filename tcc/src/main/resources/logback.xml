@@ -2,7 +2,7 @@
 <configuration scan="false" scanPeriod="60 seconds" debug="false">
     <property name="log.level" value="INFO" />
     <property name="log.maxHistory" value="30" />
-    <property name="log.filePath" value="./" />
+    <property name="log.filePath" value="~/logs" />
     <property name="log.pattern"
               value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}-%msg%n"/>
 
