@@ -47,6 +47,11 @@ jobs:
        nohup java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter &
        sleep 1m
        java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter
+    # check error.log  see https://github.com/lots0logs/gh-action-conditional-failure
+    - name: Conditional Failure
+      uses: lots0logs/gh-action-conditional-failure@1.0.0
+#       with:
+#         file_exists: -- **/*.error.log
     - name: The job has failed
       if: failure()
       run: echo 'TCC model fail!'
