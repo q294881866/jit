@@ -49,7 +49,7 @@ jobs:
        java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter
        ls
     - name: Contains error.log
-      run: ./check_error.sh
+      run: bash -x ./check_error.sh
     - name: The job has failed
       if: failure()
       run: echo 'TCC model fail!'
