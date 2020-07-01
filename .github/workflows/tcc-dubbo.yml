@@ -47,7 +47,6 @@ jobs:
        nohup java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccProviderStarter &
        sleep 1m
        java -cp .:tcc/target/lib/*:tcc/target/seata-jit-tcc.jar io.seata.jit.starter.TccConsumerStarter
-       exit 1
-    - name: Failure message
-      run: echo 'TCC model fail'
-
+    - name: The job has failed
+      if: failure()
+      run: echo 'TCC model fail!'
